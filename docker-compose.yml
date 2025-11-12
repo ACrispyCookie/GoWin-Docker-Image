@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  gowin:
+    # This tells Compose to use the 'gowin-ide' image
+    # that you built earlier with 'docker build -t gowin-ide .'
+    image: gowin-ide
+
+    # Optional: Give the running container a consistent name
+    container_name: gowin-ide-container
+
+    # Equivalent to -it
+    stdin_open: true
+    tty: true
+
+    # Equivalent to -e DISPLAY=$DISPLAY
+    # This automatically forwards the DISPLAY variable from your host.
+    environment:
+      - DISPLAY=${DISPLAY}
+
+    # Equivalent to the -v flags
+    volumes:
+      # Share the X11 socket for the GUI
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+      # Share the host's USB bus for the programmer
+      - /dev/bus/usb:/dev/bus/usb
+      # This maps a folder on your host to the container's home directory
+      - ${GOWIN_PROJECTS_DIR:-./projects}:/home/gowinuser/projects
+
+    # Equivalent to --device-cgroup-rule='c 189:* rmw'
+    # This grants the container the necessary permissions to access USB devices.
+    device_cgroup_rules:
+      - 'c 189:* rmw'
+
+    # --- DEBUGGING ---
+    # Uncomment the line below to override the start command and get a shell
+    # This will let you explore the filesystem to find the correct path.
+    #command: /bin/bash
