@@ -55,5 +55,11 @@ Now you can start the IDE from your project's root directory.
 docker-compose up
 ```
 
-### **3. Stopping the IDE**
+### 3. Choosing project location
+In order for your projects to be saved on your host machine, you will need to create them on the following path:
+```
+/home/gowinuser/projects
+```
+
+### 4. Stopping the IDE
 To stop the IDE, simply press Ctrl+C in the terminal where docker-compose up is running.
