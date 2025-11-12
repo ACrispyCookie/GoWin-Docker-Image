@@ -25,7 +25,7 @@ services:
       # Share the host's USB bus for the programmer
       - /dev/bus/usb:/dev/bus/usb
       # This maps a folder on your host to the container's home directory
-      - ${GOWIN_PROJECTS_DIR:-./projects}:/home/gowinuser/projects
+      - ./projects:/home/gowinuser/projects
 
     # Equivalent to --device-cgroup-rule='c 189:* rmw'
     # This grants the container the necessary permissions to access USB devices.
