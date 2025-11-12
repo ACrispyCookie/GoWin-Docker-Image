@@ -8,12 +8,12 @@ Your project folder should contain:
 
 ```
 .
-├── docker-compose.yml      \# Manages container settings (GUI, USB, volumes)
-├── projects/               \# Default save location for your IDE projects
+├── docker-compose.yml      # Manages container settings (GUI, USB, volumes)
+├── projects/               # Default save location for your IDE projects
 └── build/
-    ├── Dockerfile              \# Defines the Ubuntu 22.04 container
-    ├── run\_gowin.sh            \# Applies runtime fixes inside the container
-    └── Gowin\_V1.9.11.03\_Education\_Linux.tar.gz  \# \<-- Your downloaded IDE
+    ├── Dockerfile              # Defines the Ubuntu 22.04 container
+    ├── run_gowin.sh            # Applies runtime fixes inside the container
+    └── Gowin_V1.9.11.03_Education_Linux.tar.gz  # <-- Your downloaded IDE
 ```
 
 ## Prerequisites
@@ -46,7 +46,7 @@ docker build -t gowin-ide ./build
 ### 1. Allow GUI access
 You must grant Docker permission to display windows on your desktop. Run this once per host reboot:
 ```
-xhost \+local:docker
+xhost +local:docker
 ```
 
 ### 2. Run with Docker Compose
