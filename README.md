@@ -52,7 +52,7 @@ xhost +local:docker
 ### 2. Run with Docker Compose
 Now you can start the IDE from your project's root directory.
 ```
-docker-compose up
+docker compose up
 ```
 
 ### 3. Choosing project location
@@ -62,4 +62,4 @@ In order for your projects to be saved on your host machine, you will need to cr
 ```
 
 ### 4. Stopping the IDE
-To stop the IDE, simply press Ctrl+C in the terminal where docker-compose up is running.
+To stop the IDE, simply close the IDE window or press Ctrl+C in the terminal where docker compose up is running.
