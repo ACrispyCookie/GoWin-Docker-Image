@@ -24,6 +24,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix:ro
       # Share the host's USB bus for the programmer
       - /dev/bus/usb:/dev/bus/usb
+      - /run/udev:/run/udev:ro
       # This maps a folder on your host to the container's home directory
       - ./projects:/home/gowinuser/projects
 
